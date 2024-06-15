@@ -1,0 +1,506 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header CSS */
+  
+  .transparent-header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .transparent-header nav {
+    text-align: center;
+    padding-top: 25px;
+    font-size: 28px;
+  }
+  
+  .transparent-header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .transparent-header li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .transparent-header li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* SlideShow CSS */
+  
+  .slideshow {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px; 
+  }
+  
+  .slideshow video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1s, transform 1s; 
+    transform: scale(1.5); 
+  }
+  
+  .video-slide.active {
+    opacity: 1;
+    z-index: 1; 
+    transform: scale(1); 
+  }
+  
+  .arrow-right,
+  .arrow-left {
+    z-index: 2; 
+  }
+  
+  
+  /* Cards CSS */
+  
+  .cards {
+    width: 800px;
+    height: 380px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    z-index: 10; 
+  }
+  
+  .card-1 h1 {
+    font-size: 60px;
+    color: #680045;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 120px;
+    margin-bottom: -20px;
+  }
+  
+  .card-1 h5 {
+    font-family: 'Agdasima';
+    font-size: 28px;
+    text-align: center;
+    padding: 0px 30px 140px 30px;
+  }
+  
+  .card-2 h1 {
+    font-size: 60px;
+    color: #881397;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 180px;
+    margin-bottom: -30px;
+  }
+  
+  .card-2 h5 {
+    font-family: 'Agdasima';
+    font-size: 28px;
+    text-align: center;
+    padding: 0px 30px 200px 30px;
+  }
+  
+  
+  .cards button {
+    display: flex;
+    align-items: center;
+    font-family: 'Agdasima';
+    font-weight: 900;
+    font-size: 23px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: linear-gradient(to right, #3f0036, #a5005b, #ff00d9);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    z-index: 20;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  
+  
+  .cards button:hover{
+    background: linear-gradient(to right, #95007f, #ff2b9f, #fe6ae8);
+  }
+  
+  .cards button svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  .cards button a {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    text-decoration: none;
+    color: white;
+  }
+  
+  .cards button:hover svg {
+    transform: translateX(5px) rotate(90deg);
+  }
+  
+  .cards button:hover a {
+    transform: translateX(7px);
+  }
+  
+  .card-2 button{
+    background: linear-gradient(to right, #8134ad, #b349ad, #ec1ab8);
+  }
+  
+  .card-2 button:hover{
+    background: linear-gradient(to right, #942081, #c516b7, #b92299);
+  }
+  
+  
+  /*About Us CSS*/
+  .aboutus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .aboutus-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .aboutus-card {
+    width: 1000px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.45);
+    position: absolute;
+    top: 50%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10; 
+  }
+  
+  .aboutus-card h1 {
+    font-size: 53px;
+    color: #680045;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 900;
+  }
+  
+  .aboutus-card h5 {
+    font-family: 'Agdasima';
+    font-size: 30px;
+    margin: -20px 55px 0px 55px;
+  }
+  
+  
+  /* Arrows CSS */
+  
+  .arrow-right {
+    right: 5%;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%) rotate(-90deg);
+    cursor: pointer;
+  }
+  
+  .arrow-left {
+    left: 5%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    cursor: pointer;
+  }
+  
+  .arrow span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+  }
+  
+  .arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+  
+  .arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+  }
+  
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+    }
+  }
+  
+  
+  /*ViewGames CSS*/
+  
+  body {
+    font-family: 'Agdasima', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Base styles for header */
+  /* Base styles for header */
+  header {
+    background: linear-gradient(to right, #4a148c, #7b1fa2);
+    color: white;
+    padding: 5px 0; /* Adjust the top and bottom padding */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin: 0 10px; /* Adjust margin around list items */
+    position: relative;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Keep font size the same */
+    padding: 10px 15px; /* Adjust padding around each link */
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    line-height: 1; /* Ensure line height is reset */
+  }
+  
+  
+  header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  }
+  
+  /* Dropdown menu */
+  header nav ul li ul {
+    position: absolute;
+    top: 50px;
+    background: #6200ea; /* Purple background for dropdown */
+    padding: 10px 0;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  
+  header nav ul li:hover ul {
+    display: block;
+  }
+  
+  header nav ul li ul li {
+    margin: 0;
+    width: 150px;
+    text-align: center;
+  }
+  
+  header nav ul li ul li a {
+    padding: 10px;
+    color: white;
+    display: block;
+  }
+  
+  header nav ul li ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  }
+  
+  
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .video-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .content-container {
+    position: relative;
+    z-index: 1;
+    height: 100%; /* Ensure content container takes full height */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .vg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay to improve text readability */
+  }
+  
+  .viewgames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .viewgames-card {
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+  }
+  
+  .viewgames-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .viewgames-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .viewgames-card h3 {
+    margin: 15px 0 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .viewgames-card p {
+    font-size: 20px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .rating {
+    font-size: 16px;
+    color: #ffa500;
+    margin: 10px 0;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  .viewgames-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .viewgames-button button {
+    width: 45%;
+    padding: 10px 0;
+    margin: 0 5px;
+    background-color: #6200ea;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .viewgames-button button:hover {
+    background-color: #3700b3;
+    transform: translateY(-2px);
+  }
+  
+  .viewgames-button a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Agdasima';
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .try-button {
+    background-color: #4caf50;
+  }
+  
+  .try-button:hover {
+    background-color: #388e3c;
+  }
+  
+  
+  
